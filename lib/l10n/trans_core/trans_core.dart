@@ -21,6 +21,14 @@ class TransCore {
     return Localizations.of<TransCore>(context, TransCore);
   }
 
+  /// App
+
+  String get appTitle {
+    return Intl.message('Flutter Images', name: 'appTitle', desc: 'The app title');
+  }
+
+  /// Generics
+
   String get cancel {
     return Intl.message('Cancel', name: 'cancel');
   }

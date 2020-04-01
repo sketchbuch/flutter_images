@@ -1,0 +1,9 @@
+{
+  "@@last_modified": "2020-04-01T19:57:42.660996",
+  "title": "Flutter Images",
+  "@title": {
+    "description": "The title of the login screen",
+    "type": "text",
+    "placeholders": {}
+  }
+}
