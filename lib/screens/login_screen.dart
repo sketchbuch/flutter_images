@@ -1,9 +1,7 @@
 import 'package:flutter_images/constants/layout.dart';
-import 'package:flutter_images/constants/typography.dart';
 import 'package:flutter_images/l10n/trans_login/trans_login.dart';
 import 'package:flutter_images/models/login_data.dart';
-import 'package:flutter_images/widgets/ui/field_wrapper.dart';
-import 'package:flutter_images/widgets/ui/headline.dart';
+import 'package:flutter_images/widgets/forms/login_form.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -35,55 +33,7 @@ class LoginScreenState extends State<LoginScreen> {
       body: SingleChildScrollView(
         child: Container(
           margin: insetNormal,
-          child: Form(
-            key: _formKey,
-            child: Column(
-              children: <Widget>[
-                Headline(transLogin.message),
-                FieldWrapper(
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                      hintText: transLogin.unPlaceholder,
-                      labelText: transLogin.unLabel,
-                    ),
-                    style: TextStyle(fontSize: fontSizeNormal),
-                    validator: (value) {
-                      if (value.isEmpty) {
-                        return transLogin.unEmptyError;
-                      }
-                      return null;
-                    },
-                    onSaved: (val) => setState(() => _fromData.username = val),
-                  ),
-                ),
-                FieldWrapper(
-                  child: TextFormField(
-                    obscureText: true,
-                    decoration: InputDecoration(
-                      hintText: transLogin.pwPlaceholder,
-                      labelText: transLogin.pwLabel,
-                    ),
-                    style: TextStyle(fontSize: fontSizeNormal),
-                    validator: (value) {
-                      if (value.isEmpty) {
-                        return transLogin.pwEmptyError;
-                      }
-                      return null;
-                    },
-                    onSaved: (val) => setState(() => _fromData.password = val),
-                  ),
-                ),
-                FieldWrapper(
-                  child: RaisedButton(
-                    onPressed: () {
-                      onSubmit();
-                    },
-                    child: Text(transLogin.btnLabel),
-                  ),
-                ),
-              ],
-            ),
-          ),
+          child: LoginForm(),
         ),
       ),
     );

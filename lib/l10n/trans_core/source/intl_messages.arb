@@ -1,5 +1,5 @@
 {
-  "@@last_modified": "2020-03-31T22:18:15.680530",
+  "@@last_modified": "2020-04-02T15:18:59.443557",
   "appTitle": "Flutter Images",
   "@appTitle": {
     "description": "The app title",
@@ -23,6 +23,16 @@
   },
   "no": "No",
   "@no": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "inputTextShow": "Show text",
+  "@inputTextShow": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "inputTextHide": "Hide text",
+  "@inputTextHide": {
     "type": "text",
     "placeholders": {}
   }

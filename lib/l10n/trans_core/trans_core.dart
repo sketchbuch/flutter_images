@@ -21,14 +21,11 @@ class TransCore {
     return Localizations.of<TransCore>(context, TransCore);
   }
 
-  /// App
-
   String get appTitle {
     return Intl.message('Flutter Images', name: 'appTitle', desc: 'The app title');
   }
 
   /// Generics
-
   String get cancel {
     return Intl.message('Cancel', name: 'cancel');
   }
@@ -43,5 +40,14 @@ class TransCore {
 
   String get no {
     return Intl.message('No', name: 'no');
+  }
+
+  /// PW Input
+  String get inputTextShow {
+    return Intl.message('Show text', name: 'inputTextShow');
+  }
+
+  String get inputTextHide {
+    return Intl.message('Hide text', name: 'inputTextHide');
   }
 }
