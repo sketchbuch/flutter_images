@@ -1,10 +1,14 @@
-import 'package:flutter_images/constants/typography.dart';
+import 'package:email_validator/email_validator.dart';
+import 'package:flutter_images/constants/forms.dart';
 import 'package:flutter_images/l10n/trans_login/trans_login.dart';
 import 'package:flutter_images/models/login_data.dart';
 import 'package:flutter_images/widgets/ui/field_wrapper.dart';
 import 'package:flutter_images/widgets/ui/headline.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_images/widgets/ui/password_field.dart';
+import 'package:flutter/material.dart';
+
+const int UN_MAXLENGTH = 100;
+const int PW_MAXLENGTH = 50;
 
 class LoginForm extends StatefulWidget {
   LoginForm({Key key}) : super(key: key);
@@ -39,26 +43,31 @@ class LoginFormState extends State<LoginForm> {
                 hintText: transLogin.unPlaceholder,
                 labelText: transLogin.unLabel,
               ),
+              maxLength: UN_MAXLENGTH,
               onSaved: (val) => setState(() => _fromData.username = val),
-              style: TextStyle(fontSize: fontSizeNormal),
+              style: textInputStyle,
               validator: (value) {
                 if (value.isEmpty) {
                   return transLogin.unEmptyError;
+                } else if (!EmailValidator.validate(value)) {
+                  return transLogin.unEmailError;
                 }
+
                 return null;
               },
             ),
           ),
           FieldWrapper(
             child: PasswordField(
-              label: transLogin.pwLabel,
-              placeholder: transLogin.pwPlaceholder,
+              hintText: transLogin.pwPlaceholder,
+              labelText: transLogin.pwLabel,
+              maxLength: PW_MAXLENGTH,
               onSaved: (val) => setState(() => _fromData.password = val),
-              style: TextStyle(fontSize: fontSizeNormal),
               validator: (value) {
                 if (value.isEmpty) {
                   return transLogin.pwEmptyError;
                 }
+
                 return null;
               },
             ),

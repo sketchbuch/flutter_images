@@ -1,22 +1,26 @@
-import 'package:flutter_images/constants/typography.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter_images/constants/forms.dart';
 import 'package:flutter_images/l10n/trans_core/trans_core.dart';
+import 'package:flutter/material.dart';
 
 class PasswordField extends StatefulWidget {
   final bool initialVisibility;
+  final int maxLength;
   final String Function(String) validator;
-  final String label;
-  final String placeholder;
+  final String helperText;
+  final String hintText;
+  final String labelText;
   final TextStyle style;
   final void Function(String) onSaved;
 
   PasswordField({
     Key key,
-    this.label,
+    this.helperText,
+    this.hintText,
     this.initialVisibility = true,
+    this.labelText,
+    this.maxLength,
     this.onSaved,
-    this.placeholder,
-    this.style = const TextStyle(fontSize: fontSizeNormal),
+    this.style = textInputStyle,
     this.validator,
   }) : super(key: key);
 
@@ -46,14 +50,17 @@ class PasswordFieldState extends State<PasswordField> {
 
     return TextFormField(
       obscureText: isVisible,
+      maxLength: widget.maxLength,
       decoration: InputDecoration(
-          hintText: widget.placeholder,
-          labelText: widget.label,
-          suffixIcon: IconButton(
-            icon: Icon(iconType),
-            onPressed: _toggleVisibility,
-            tooltip: tooltip,
-          )),
+        hintText: widget.hintText,
+        labelText: widget.labelText,
+        helperText: widget.helperText,
+        suffixIcon: IconButton(
+          icon: Icon(iconType),
+          onPressed: _toggleVisibility,
+          tooltip: tooltip,
+        ),
+      ),
       style: widget.style,
       validator: widget.validator,
       onSaved: widget.onSaved,

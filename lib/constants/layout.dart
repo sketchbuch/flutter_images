@@ -1,9 +1,9 @@
 import 'package:flutter/painting.dart';
 
 // Base
-const marginSizeNormal = 15.0;
-const marginSizeLarge = 20.0;
-const marginSizeSmall = 10.0;
+const double marginSizeNormal = 15.0;
+const double marginSizeLarge = 20.0;
+const double marginSizeSmall = 10.0;
 
 // Forms
 const EdgeInsets insetNormal = EdgeInsets.all(marginSizeNormal);

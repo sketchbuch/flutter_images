@@ -38,6 +38,10 @@ class TransLogin {
     return Intl.message('Enter your email', name: 'unPlaceholder');
   }
 
+  String get unEmailError {
+    return Intl.message('Please enter a valid email', name: 'unEmailError');
+  }
+
   String get unEmptyError {
     return Intl.message('Please enter your email', name: 'unEmptyError');
   }

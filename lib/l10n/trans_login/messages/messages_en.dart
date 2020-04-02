@@ -27,6 +27,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "pwLabel" : MessageLookupByLibrary.simpleMessage("Password"),
     "pwPlaceholder" : MessageLookupByLibrary.simpleMessage("Enter your password"),
     "title" : MessageLookupByLibrary.simpleMessage("Flutter Images"),
+    "unEmailError" : MessageLookupByLibrary.simpleMessage("Please enter a valid email"),
     "unEmptyError" : MessageLookupByLibrary.simpleMessage("Please enter your email"),
     "unLabel" : MessageLookupByLibrary.simpleMessage("Email"),
     "unPlaceholder" : MessageLookupByLibrary.simpleMessage("Enter your email")
