@@ -1,8 +1,48 @@
 {
-  "@@last_modified": "2020-04-01T19:57:42.660996",
+  "@@last_modified": "2020-04-01T21:40:08.825617",
   "title": "Flutter Images",
   "@title": {
     "description": "The title of the login screen",
+    "type": "text",
+    "placeholders": {}
+  },
+  "message": "Login to Google Images",
+  "@message": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "unLabel": "Email",
+  "@unLabel": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "unPlaceholder": "Enter your email",
+  "@unPlaceholder": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "unEmptyError": "Please enter your email",
+  "@unEmptyError": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "pwLabel": "Password",
+  "@pwLabel": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "pwPlaceholder": "Enter your password",
+  "@pwPlaceholder": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "pwEmptyError": "Please enter your password",
+  "@pwEmptyError": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "btnLabel": "Login",
+  "@btnLabel": {
     "type": "text",
     "placeholders": {}
   }

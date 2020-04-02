@@ -24,4 +24,39 @@ class TransLogin {
   String get title {
     return Intl.message('Flutter Images', name: 'title', desc: 'The title of the login screen');
   }
+
+  String get message {
+    return Intl.message('Login to Google Images', name: 'message');
+  }
+
+  // Username Field
+  String get unLabel {
+    return Intl.message('Email', name: 'unLabel');
+  }
+
+  String get unPlaceholder {
+    return Intl.message('Enter your email', name: 'unPlaceholder');
+  }
+
+  String get unEmptyError {
+    return Intl.message('Please enter your email', name: 'unEmptyError');
+  }
+
+  // Password Field
+  String get pwLabel {
+    return Intl.message('Password', name: 'pwLabel');
+  }
+
+  String get pwPlaceholder {
+    return Intl.message('Enter your password', name: 'pwPlaceholder');
+  }
+
+  String get pwEmptyError {
+    return Intl.message('Please enter your password', name: 'pwEmptyError');
+  }
+
+  // Login Button
+  String get btnLabel {
+    return Intl.message('Login', name: 'btnLabel');
+  }
 }
