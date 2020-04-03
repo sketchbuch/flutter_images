@@ -2,6 +2,7 @@ import 'l10n/trans_core/trans_core_delegate.dart';
 import 'l10n/trans_core/trans_core.dart';
 import 'l10n/trans_login/trans_login_delegate.dart';
 import 'package:flutter_images/screens/login_screen.dart';
+import 'package:flutter_images/theme.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter/material.dart';
 
@@ -19,9 +20,7 @@ class Root extends StatelessWidget {
       ],
       home: LoginScreen(),
       onGenerateTitle: (context) => TransCore.of(context).appTitle,
-      theme: ThemeData(
-        primarySwatch: Colors.green,
-      ),
+      theme: appTheme,
       supportedLocales: [
         const Locale('en'),
       ],

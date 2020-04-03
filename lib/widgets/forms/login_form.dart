@@ -6,6 +6,8 @@ import 'package:flutter_images/widgets/ui/field_wrapper.dart';
 import 'package:flutter_images/widgets/ui/headline.dart';
 import 'package:flutter_images/widgets/ui/password_field.dart';
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 const int UN_MAXLENGTH = 100;
 const int PW_MAXLENGTH = 50;

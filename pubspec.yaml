@@ -8,10 +8,12 @@ environment:
 dependencies:
   cupertino_icons: ^0.1.2
   email_validator: '^1.0.0'
+  firebase_auth: ^0.15.5+3
   flutter:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
+  google_sign_in: ^4.4.0
 
 dev_dependencies:
   flutter_test:
