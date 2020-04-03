@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
-final FirebaseAuth _auth = FirebaseAuth.instance;
+final FirebaseAuth firebaseAuth = FirebaseAuth.instance;
 final GoogleSignIn googleSignIn = GoogleSignIn();
 
 Future<String> signInGoogle() async {
@@ -13,20 +13,16 @@ Future<String> signInGoogle() async {
     idToken: googleSignInAuthentication.idToken,
   );
 
-  final AuthResult authResult = await _auth.signInWithCredential(credential);
+  final AuthResult authResult = await firebaseAuth.signInWithCredential(credential);
   final FirebaseUser user = authResult.user;
 
   assert(!user.isAnonymous);
   assert(await user.getIdToken() != null);
 
-  final FirebaseUser currentUser = await _auth.currentUser();
+  final FirebaseUser currentUser = await firebaseAuth.currentUser();
   assert(user.uid == currentUser.uid);
-
-  return '### signInWithGoogle succeeded: $user';
 }
 
 void signOutGoogle() async {
   await googleSignIn.signOut();
-
-  print("### User Sign Out");
 }

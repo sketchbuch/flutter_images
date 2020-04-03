@@ -1,4 +1,5 @@
 import 'package:flutter_images/firebase/sign_in.dart';
+import 'package:flutter_images/screens/error_screen.dart';
 import 'package:flutter_images/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -8,7 +9,7 @@ class SignInButton extends StatelessWidget {
     return OutlineButton(
       splashColor: Colors.grey,
       onPressed: () {
-        signInGoogle().whenComplete(() {
+        signInGoogle().then((response) {
           Navigator.of(context).push(
             MaterialPageRoute(
               builder: (context) {
@@ -17,11 +18,13 @@ class SignInButton extends StatelessWidget {
             ),
           );
         }).catchError((error) {
-          print('#### Error:');
-          print(error);
-        }).then((response) {
-          print('#### Success:');
-          print(response);
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) {
+                return ErrorScreen(error: error);
+              },
+            ),
+          );
         });
       },
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
