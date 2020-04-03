@@ -9,15 +9,19 @@ class SignInButton extends StatelessWidget {
     return OutlineButton(
       splashColor: Colors.grey,
       onPressed: () {
-        signInGoogle().then((response) {
-          Navigator.of(context).push(
-            MaterialPageRoute(
-              builder: (context) {
-                return LoginScreen();
-              },
-            ),
-          );
-        }).catchError((error) {
+        // try/catch instead of .catchError() as a work around
+        // to: https://github.com/flutter/flutter/issues/33427
+        try {
+          signInGoogle().then((response) {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) {
+                  return LoginScreen();
+                },
+              ),
+            );
+          });
+        } catch (error) {
           Navigator.of(context).push(
             MaterialPageRoute(
               builder: (context) {
@@ -25,7 +29,7 @@ class SignInButton extends StatelessWidget {
               },
             ),
           );
-        });
+        }
       },
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
       highlightElevation: 0,
