@@ -1,5 +1,5 @@
 import 'package:flutter_images/constants/forms.dart';
-import 'package:flutter_images/l10n/trans_core/trans_core.dart';
+import 'package:flutter_images/l10n/core/localizations.dart';
 import 'package:flutter/material.dart';
 
 class PasswordField extends StatefulWidget {
@@ -44,8 +44,8 @@ class PasswordFieldState extends State<PasswordField> {
 
   @override
   Widget build(BuildContext context) {
-    TransCore transCore = TransCore.of(context);
-    String tooltip = (isVisible ? transCore.inputTextShow : transCore.inputTextHide);
+    CoreLocalizations coreTranslations = CoreLocalizations.of(context);
+    String tooltip = (isVisible ? coreTranslations.inputTextShow : coreTranslations.inputTextHide);
     IconData iconType = isVisible ? Icons.visibility : Icons.visibility_off;
 
     return TextFormField(

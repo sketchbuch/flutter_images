@@ -1,5 +1,5 @@
 import 'package:flutter_images/constants/layout.dart';
-import 'package:flutter_images/l10n/trans_login/trans_login.dart';
+import 'package:flutter_images/l10n/login/localizations.dart';
 import 'package:flutter_images/models/login_data.dart';
 import 'package:flutter_images/widgets/forms/login_form.dart';
 import 'package:flutter/material.dart';
@@ -24,11 +24,11 @@ class LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    TransLogin transLogin = TransLogin.of(context);
+    LoginLocalizations loginLocalizations = LoginLocalizations.of(context);
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(transLogin.title),
+        title: Text(loginLocalizations.title),
       ),
       body: SingleChildScrollView(
         child: Container(

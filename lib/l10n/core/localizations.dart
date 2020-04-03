@@ -1,24 +1,27 @@
 import 'dart:async';
-import 'package:flutter_images/l10n/trans_core/messages/messages_all.dart';
+import 'package:flutter_images/l10n/core/delegate.dart';
+import 'package:flutter_images/l10n/core/messages/messages_all.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-// flutter pub pub run intl_translation:extract_to_arb --output-dir=lib/l10n/trans_core/source lib/l10n/trans_core/trans_core.dart
-// flutter pub pub run intl_translation:generate_from_arb --output-dir=lib/l10n/trans_core/messages lib/l10n/trans_core/trans_core.dart lib/l10n/trans_core/source/intl_en.arb
+// flutter pub pub run intl_translation:extract_to_arb --output-dir=lib/l10n/core/source lib/l10n/core/localizations.dart
+// flutter pub pub run intl_translation:generate_from_arb --output-dir=lib/l10n/core/messages lib/l10n/core/localizations.dart lib/l10n/core/source/intl_en.arb
 
-class TransCore {
-  static Future<TransCore> load(Locale locale) {
+class CoreLocalizations {
+  static const CoreLocalizationsDelegate delegate = CoreLocalizationsDelegate();
+
+  static Future<CoreLocalizations> load(Locale locale) {
     final String name = locale.countryCode == null ? locale.languageCode : locale.toString();
     final String localeName = Intl.canonicalizedLocale(name);
 
     return initializeMessages(localeName).then((bool _) {
       Intl.defaultLocale = localeName;
-      return new TransCore();
+      return new CoreLocalizations();
     });
   }
 
-  static TransCore of(BuildContext context) {
-    return Localizations.of<TransCore>(context, TransCore);
+  static CoreLocalizations of(BuildContext context) {
+    return Localizations.of<CoreLocalizations>(context, CoreLocalizations);
   }
 
   String get appTitle {

@@ -1,0 +1,14 @@
+{
+  "@@last_modified": "2020-04-03T17:09:36.656378",
+  "title": "Flutter Images Error",
+  "@title": {
+    "description": "The title of the error screen",
+    "type": "text",
+    "placeholders": {}
+  },
+  "message": "An error occured:",
+  "@message": {
+    "type": "text",
+    "placeholders": {}
+  }
+}

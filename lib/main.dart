@@ -1,7 +1,7 @@
-import 'l10n/trans_core/trans_core_delegate.dart';
-import 'l10n/trans_core/trans_core.dart';
-import 'l10n/trans_login/trans_login_delegate.dart';
-import 'package:flutter_images/screens/login_screen.dart';
+import 'package:flutter_images/l10n/core/localizations.dart';
+import 'package:flutter_images/l10n/error/localizations.dart';
+import 'package:flutter_images/l10n/login/localizations.dart';
+import 'package:flutter_images/screens/home_screen.dart';
 import 'package:flutter_images/theme.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter/material.dart';
@@ -13,13 +13,15 @@ class Root extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       localizationsDelegates: [
-        TransLoginDelegate(),
-        TransCoreDelegate(),
         GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate
+        GlobalWidgetsLocalizations.delegate,
+        // App Translations:
+        CoreLocalizations.delegate,
+        ErrorLocalizations.delegate,
+        LoginLocalizations.delegate,
       ],
-      home: LoginScreen(),
-      onGenerateTitle: (context) => TransCore.of(context).appTitle,
+      home: HomeScreen(),
+      onGenerateTitle: (context) => CoreLocalizations.of(context).appTitle,
       theme: appTheme,
       supportedLocales: [
         const Locale('en'),
