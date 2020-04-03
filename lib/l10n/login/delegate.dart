@@ -1,9 +1,9 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:flutter_images/l10n/login/translations.dart';
+import 'package:flutter_images/l10n/login/localizations.dart';
 
-class LoginTranslationsDelegate extends LocalizationsDelegate<LoginTranslations> {
-  const LoginTranslationsDelegate();
+class LoginLocalizationsDelegate extends LocalizationsDelegate<LoginLocalizations> {
+  const LoginLocalizationsDelegate();
 
   @override
   bool isSupported(Locale locale) {
@@ -11,12 +11,12 @@ class LoginTranslationsDelegate extends LocalizationsDelegate<LoginTranslations>
   }
 
   @override
-  Future<LoginTranslations> load(Locale locale) {
-    return LoginTranslations.load(locale);
+  Future<LoginLocalizations> load(Locale locale) {
+    return LoginLocalizations.load(locale);
   }
 
   @override
-  bool shouldReload(LocalizationsDelegate<LoginTranslations> old) {
+  bool shouldReload(LocalizationsDelegate<LoginLocalizations> old) {
     return false;
   }
 }

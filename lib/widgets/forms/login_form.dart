@@ -1,6 +1,6 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter_images/constants/forms.dart';
-import 'package:flutter_images/l10n/login/translations.dart';
+import 'package:flutter_images/l10n/login/localizations.dart';
 import 'package:flutter_images/models/login_data.dart';
 import 'package:flutter_images/widgets/ui/field_wrapper.dart';
 import 'package:flutter_images/widgets/ui/headline.dart';
@@ -30,27 +30,27 @@ class LoginFormState extends State<LoginForm> {
 
   @override
   Widget build(BuildContext context) {
-    LoginTranslations loginTranslations = LoginTranslations.of(context);
+    LoginLocalizations loginLocalizations = LoginLocalizations.of(context);
 
     return Form(
       key: _formKey,
       child: Column(
         children: <Widget>[
-          Headline(loginTranslations.message),
+          Headline(loginLocalizations.message),
           FieldWrapper(
             child: TextFormField(
               decoration: InputDecoration(
-                hintText: loginTranslations.unPlaceholder,
-                labelText: loginTranslations.unLabel,
+                hintText: loginLocalizations.unPlaceholder,
+                labelText: loginLocalizations.unLabel,
               ),
               maxLength: UN_MAXLENGTH,
               onSaved: (val) => setState(() => _fromData.username = val),
               style: textInputStyle,
               validator: (value) {
                 if (value.isEmpty) {
-                  return loginTranslations.unEmptyError;
+                  return loginLocalizations.unEmptyError;
                 } else if (!EmailValidator.validate(value)) {
-                  return loginTranslations.unEmailError;
+                  return loginLocalizations.unEmailError;
                 }
 
                 return null;
@@ -59,13 +59,13 @@ class LoginFormState extends State<LoginForm> {
           ),
           FieldWrapper(
             child: PasswordField(
-              hintText: loginTranslations.pwPlaceholder,
-              labelText: loginTranslations.pwLabel,
+              hintText: loginLocalizations.pwPlaceholder,
+              labelText: loginLocalizations.pwLabel,
               maxLength: PW_MAXLENGTH,
               onSaved: (val) => setState(() => _fromData.password = val),
               validator: (value) {
                 if (value.isEmpty) {
-                  return loginTranslations.pwEmptyError;
+                  return loginLocalizations.pwEmptyError;
                 }
 
                 return null;
@@ -77,7 +77,7 @@ class LoginFormState extends State<LoginForm> {
               onPressed: () {
                 onSubmit();
               },
-              child: Text(loginTranslations.btnLabel),
+              child: Text(loginLocalizations.btnLabel),
             ),
           ),
         ],

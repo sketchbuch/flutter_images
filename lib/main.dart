@@ -1,7 +1,6 @@
-import 'package:flutter_images/l10n/core/delegate.dart';
-import 'package:flutter_images/l10n/core/translations.dart';
-import 'package:flutter_images/l10n/error/delegate.dart';
-import 'package:flutter_images/l10n/login/delegate.dart';
+import 'package:flutter_images/l10n/core/localizations.dart';
+import 'package:flutter_images/l10n/error/localizations.dart';
+import 'package:flutter_images/l10n/login/localizations.dart';
 import 'package:flutter_images/screens/home_screen.dart';
 import 'package:flutter_images/theme.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -17,12 +16,12 @@ class Root extends StatelessWidget {
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         // App Translations:
-        CoreTranslationsDelegate(),
-        ErrorTranslationsDelegate(),
-        LoginTranslationsDelegate(),
+        CoreLocalizations.delegate,
+        ErrorLocalizations.delegate,
+        LoginLocalizations.delegate,
       ],
       home: HomeScreen(),
-      onGenerateTitle: (context) => CoreTranslations.of(context).appTitle,
+      onGenerateTitle: (context) => CoreLocalizations.of(context).appTitle,
       theme: appTheme,
       supportedLocales: [
         const Locale('en'),

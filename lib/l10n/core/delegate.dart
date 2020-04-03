@@ -1,9 +1,9 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:flutter_images/l10n/core/translations.dart';
+import 'package:flutter_images/l10n/core/localizations.dart';
 
-class CoreTranslationsDelegate extends LocalizationsDelegate<CoreTranslations> {
-  const CoreTranslationsDelegate();
+class CoreLocalizationsDelegate extends LocalizationsDelegate<CoreLocalizations> {
+  const CoreLocalizationsDelegate();
 
   @override
   bool isSupported(Locale locale) {
@@ -11,12 +11,12 @@ class CoreTranslationsDelegate extends LocalizationsDelegate<CoreTranslations> {
   }
 
   @override
-  Future<CoreTranslations> load(Locale locale) {
-    return CoreTranslations.load(locale);
+  Future<CoreLocalizations> load(Locale locale) {
+    return CoreLocalizations.load(locale);
   }
 
   @override
-  bool shouldReload(LocalizationsDelegate<CoreTranslations> old) {
+  bool shouldReload(LocalizationsDelegate<CoreLocalizations> old) {
     return false;
   }
 }

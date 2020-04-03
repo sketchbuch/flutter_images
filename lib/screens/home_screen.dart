@@ -1,4 +1,4 @@
-import 'package:flutter_images/l10n/login/translations.dart';
+import 'package:flutter_images/l10n/login/localizations.dart';
 import 'package:flutter_images/widgets/ui/signin_button.dart';
 import 'package:flutter/material.dart';
 
@@ -12,11 +12,11 @@ class HomeScreen extends StatefulWidget {
 class HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    LoginTranslations loginTranslations = LoginTranslations.of(context);
+    LoginLocalizations loginLocalizations = LoginLocalizations.of(context);
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(loginTranslations.title),
+        title: Text(loginLocalizations.title),
       ),
       body: Center(
         child: Column(
