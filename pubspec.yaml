@@ -2,9 +2,6 @@ name: flutter_images
 description: A new Flutter project.
 version: 1.0.0+1
 
-environment:
-  sdk: ">=2.1.0 <3.0.0"
-
 dependencies:
   cupertino_icons: ^0.1.2
   email_validator: '^1.0.0'
@@ -20,5 +17,10 @@ dev_dependencies:
     sdk: flutter
   intl_translation: ^0.17.1
 
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
 flutter:
   uses-material-design: true
+  assets:
+    - assets/logos/

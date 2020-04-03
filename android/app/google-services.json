@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "411396953552",
+    "firebase_url": "https://flutter-images.firebaseio.com",
+    "project_id": "flutter-images",
+    "storage_bucket": "flutter-images.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:411396953552:android:a202e8e9f543d42af015d5",
+        "android_client_info": {
+          "package_name": "com.sketchbuch.google_image_test"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "411396953552-n8djriugij00vcpdm7d750cfl92rr0cs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sketchbuch.google_image_test",
+            "certificate_hash": "e7e398c246c6cd69ab928a8a8167a575da90fc2f"
+          }
+        },
+        {
+          "client_id": "411396953552-hpd0hbjahgetajk29b3d4d8ev64e9o8q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7pE4AcZd6uTWbDjSZMTQomG9FiIJTdV4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "411396953552-hpd0hbjahgetajk29b3d4d8ev64e9o8q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
