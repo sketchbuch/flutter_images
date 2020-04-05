@@ -21,6 +21,11 @@ Future<String> signInGoogle() async {
     final AuthResult authResult = await _firebaseuth.signInWithCredential(credential);
     final FirebaseUser user = authResult.user;
 
+    print('### authResult');
+    print(authResult);
+    print('### user');
+    print(user);
+
     // Checking if email and name is null
     assert(user.email != null);
     assert(user.displayName != null);

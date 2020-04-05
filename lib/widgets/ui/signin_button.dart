@@ -1,36 +1,15 @@
-import 'package:flutter_images/firebase/sign_in.dart';
-import 'package:flutter_images/screens/error_screen.dart';
-import 'package:flutter_images/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 
 class SignInButton extends StatelessWidget {
+  final Function onPressed;
+
+  const SignInButton(this.onPressed);
+
   @override
   Widget build(BuildContext context) {
     return OutlineButton(
       splashColor: Colors.grey,
-      onPressed: () {
-        // try/catch instead of .catchError() as a work around
-        // to: https://github.com/flutter/flutter/issues/33427
-        try {
-          signInGoogle().then((response) {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (context) {
-                  return LoginScreen();
-                },
-              ),
-            );
-          });
-        } catch (error) {
-          Navigator.of(context).push(
-            MaterialPageRoute(
-              builder: (context) {
-                return ErrorScreen(error: error);
-              },
-            ),
-          );
-        }
-      },
+      onPressed: onPressed,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
       highlightElevation: 0,
       borderSide: BorderSide(color: Colors.grey),
