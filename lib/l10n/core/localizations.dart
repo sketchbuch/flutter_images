@@ -24,33 +24,33 @@ class CoreLocalizations {
     return Localizations.of<CoreLocalizations>(context, CoreLocalizations);
   }
 
-  String get appTitle {
-    return Intl.message('Flutter Images', name: 'appTitle', desc: 'The app title');
+  String get cAppTitle {
+    return Intl.message('Flutter Images', name: 'cAppTitle', desc: 'The app title (used on app screen)');
+  }
+
+  String get cTitle {
+    print('### core title');
+    return Intl.message('Flutter Images', name: 'cTitle', desc: 'The title for the screens without there own title');
+  }
+
+  String get cMessage {
+    return Intl.message('Welcome to Flutter Images', name: 'cMessage');
   }
 
   /// Generics
-  String get cancel {
-    return Intl.message('Cancel', name: 'cancel');
+  String get cCancel {
+    return Intl.message('cCancel', name: 'cancel');
   }
 
-  String get ok {
-    return Intl.message('OK', name: 'ok');
+  String get cOk {
+    return Intl.message('cOk', name: 'ok');
   }
 
-  String get yes {
-    return Intl.message('Yes', name: 'yes');
+  String get cYes {
+    return Intl.message('cYes', name: 'yes');
   }
 
-  String get no {
-    return Intl.message('No', name: 'no');
-  }
-
-  /// PW Input
-  String get inputTextShow {
-    return Intl.message('Show text', name: 'inputTextShow');
-  }
-
-  String get inputTextHide {
-    return Intl.message('Hide text', name: 'inputTextHide');
+  String get cNo {
+    return Intl.message('cNo', name: 'no');
   }
 }

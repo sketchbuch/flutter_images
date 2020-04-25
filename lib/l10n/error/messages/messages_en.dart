@@ -21,7 +21,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
-    "message" : MessageLookupByLibrary.simpleMessage("An error occured:"),
-    "title" : MessageLookupByLibrary.simpleMessage("Flutter Images Error")
+    "eMessage" : MessageLookupByLibrary.simpleMessage("An error occured:"),
+    "eTitle" : MessageLookupByLibrary.simpleMessage("Flutter Images Error")
   };
 }

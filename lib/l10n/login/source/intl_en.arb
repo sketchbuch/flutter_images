@@ -1,53 +1,18 @@
 {
-  "@@last_modified": "2020-04-02T17:10:15.505692",
-  "title": "Flutter Images",
-  "@title": {
+  "@@last_modified": "2020-04-25T19:00:59.581205",
+  "lTitle": "Login to Flutter Images",
+  "@lTitle": {
     "description": "The title of the login screen",
     "type": "text",
     "placeholders": {}
   },
-  "message": "Login to Google Images",
-  "@message": {
+  "lSigninButton": "Sign in with Google",
+  "@lSigninButton": {
     "type": "text",
     "placeholders": {}
   },
-  "unLabel": "Email",
-  "@unLabel": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "unPlaceholder": "Enter your email",
-  "@unPlaceholder": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "unEmailError": "Please enter a valid email",
-  "@unEmailError": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "unEmptyError": "Please enter your email",
-  "@unEmptyError": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "pwLabel": "Password",
-  "@pwLabel": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "pwPlaceholder": "Enter your password",
-  "@pwPlaceholder": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "pwEmptyError": "Please enter your password",
-  "@pwEmptyError": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "btnLabel": "Login",
-  "@btnLabel": {
+  "lSignoutButton": "Log out",
+  "@lSignoutButton": {
     "type": "text",
     "placeholders": {}
   }

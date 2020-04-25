@@ -1,38 +1,19 @@
 {
-  "@@last_modified": "2020-04-03T17:39:46.608581",
-  "appTitle": "Flutter Images",
-  "@appTitle": {
-    "description": "The app title",
+  "@@last_modified": "2020-04-25T19:03:33.824843",
+  "cAppTitle": "Flutter Images",
+  "@cAppTitle": {
+    "description": "The app title (used on app screen)",
     "type": "text",
     "placeholders": {}
   },
-  "cancel": "Cancel",
-  "@cancel": {
+  "cTitle": "Flutter Images",
+  "@cTitle": {
+    "description": "The title for the screens without there own title",
     "type": "text",
     "placeholders": {}
   },
-  "ok": "OK",
-  "@ok": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "yes": "Yes",
-  "@yes": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "no": "No",
-  "@no": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "inputTextShow": "Show text",
-  "@inputTextShow": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "inputTextHide": "Hide text",
-  "@inputTextHide": {
+  "cMessage": "Welcome to Flutter Images",
+  "@cMessage": {
     "type": "text",
     "placeholders": {}
   }

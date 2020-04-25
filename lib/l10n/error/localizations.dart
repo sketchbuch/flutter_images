@@ -24,11 +24,11 @@ class ErrorLocalizations {
     return Localizations.of<ErrorLocalizations>(context, ErrorLocalizations);
   }
 
-  String get title {
-    return Intl.message('Flutter Images Error', name: 'title', desc: 'The title of the error screen');
+  String get eTitle {
+    return Intl.message('Flutter Images Error', name: 'eTitle', desc: 'The title of the error screen');
   }
 
-  String get message {
-    return Intl.message('An error occured:', name: 'message');
+  String get eMessage {
+    return Intl.message('An error occured:', name: 'eMessage');
   }
 }

@@ -21,15 +21,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
-    "btnLabel" : MessageLookupByLibrary.simpleMessage("Login"),
-    "message" : MessageLookupByLibrary.simpleMessage("Login to Google Images"),
-    "pwEmptyError" : MessageLookupByLibrary.simpleMessage("Please enter your password"),
-    "pwLabel" : MessageLookupByLibrary.simpleMessage("Password"),
-    "pwPlaceholder" : MessageLookupByLibrary.simpleMessage("Enter your password"),
-    "title" : MessageLookupByLibrary.simpleMessage("Flutter Images"),
-    "unEmailError" : MessageLookupByLibrary.simpleMessage("Please enter a valid email"),
-    "unEmptyError" : MessageLookupByLibrary.simpleMessage("Please enter your email"),
-    "unLabel" : MessageLookupByLibrary.simpleMessage("Email"),
-    "unPlaceholder" : MessageLookupByLibrary.simpleMessage("Enter your email")
+    "lSigninButton" : MessageLookupByLibrary.simpleMessage("Sign in with Google"),
+    "lSignoutButton" : MessageLookupByLibrary.simpleMessage("Log out"),
+    "lTitle" : MessageLookupByLibrary.simpleMessage("Login to Flutter Images")
   };
 }

@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 class ErrorScreen extends StatelessWidget {
   final dynamic error;
 
-  ErrorScreen({Key key, this.error}) : super(key: key);
+  ErrorScreen(this.error, {Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,14 +13,14 @@ class ErrorScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(errorLocalizations.title),
+        title: Text(errorLocalizations.eTitle),
       ),
       body: Center(
         child: Column(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Para(errorLocalizations.message, isBold: true),
+            Para(errorLocalizations.eMessage, isBold: true),
             Para(this.error.toString()),
           ],
         ),
