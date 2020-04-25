@@ -25,45 +25,14 @@ class LoginLocalizations {
   }
 
   String get title {
-    return Intl.message('Flutter Images', name: 'title', desc: 'The title of the login screen');
+    return Intl.message('Login to Flutter Images', name: 'title', desc: 'The title of the login screen');
   }
 
-  String get message {
-    return Intl.message('Login to Google Images', name: 'message');
+  String get signinButton {
+    return Intl.message('Sign in with Google', name: 'signinButton');
   }
 
-  // Username Field
-  String get unLabel {
-    return Intl.message('Email', name: 'unLabel');
-  }
-
-  String get unPlaceholder {
-    return Intl.message('Enter your email', name: 'unPlaceholder');
-  }
-
-  String get unEmailError {
-    return Intl.message('Please enter a valid email', name: 'unEmailError');
-  }
-
-  String get unEmptyError {
-    return Intl.message('Please enter your email', name: 'unEmptyError');
-  }
-
-  // Password Field
-  String get pwLabel {
-    return Intl.message('Password', name: 'pwLabel');
-  }
-
-  String get pwPlaceholder {
-    return Intl.message('Enter your password', name: 'pwPlaceholder');
-  }
-
-  String get pwEmptyError {
-    return Intl.message('Please enter your password', name: 'pwEmptyError');
-  }
-
-  // Login Button
-  String get btnLabel {
-    return Intl.message('Login', name: 'btnLabel');
+  String get signoutButton {
+    return Intl.message('Log out', name: 'signoutButton');
   }
 }

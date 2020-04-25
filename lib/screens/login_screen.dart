@@ -1,7 +1,8 @@
-import 'package:flutter_images/constants/layout.dart';
+import 'package:flutter_images/firebase/sign_in.dart';
 import 'package:flutter_images/l10n/login/localizations.dart';
-import 'package:flutter_images/models/login_data.dart';
-import 'package:flutter_images/widgets/forms/login_form.dart';
+import 'package:flutter_images/screens/error_screen.dart';
+import 'package:flutter_images/screens/home_screen.dart';
+import 'package:flutter_images/widgets/ui/signin_button.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -12,13 +13,15 @@ class LoginScreen extends StatefulWidget {
 }
 
 class LoginScreenState extends State<LoginScreen> {
-  final _formKey = GlobalKey<FormState>();
-  final _fromData = LoginData();
-
-  void onSubmit() {
-    if (_formKey.currentState.validate()) {
-      _formKey.currentState.save();
-      print('login ok!!!');
+  void onSignInPressed() {
+    // try/catch instead of .catchError() as a work around
+    // to: https://github.com/flutter/flutter/issues/33427
+    try {
+      signInGoogle().then((response) {
+        Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => HomeScreen()));
+      });
+    } catch (error) {
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => ErrorScreen(error)));
     }
   }
 
@@ -30,10 +33,13 @@ class LoginScreenState extends State<LoginScreen> {
       appBar: AppBar(
         title: Text(loginLocalizations.title),
       ),
-      body: SingleChildScrollView(
-        child: Container(
-          margin: insetNormal,
-          child: LoginForm(),
+      body: Center(
+        child: Column(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            SignInButton(onSignInPressed),
+          ],
         ),
       ),
     );

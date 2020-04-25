@@ -25,7 +25,15 @@ class CoreLocalizations {
   }
 
   String get appTitle {
-    return Intl.message('Flutter Images', name: 'appTitle', desc: 'The app title');
+    return Intl.message('Flutter Images', name: 'appTitle', desc: 'The app title (used on app screen)');
+  }
+
+  String get title {
+    return Intl.message('Flutter Images', name: 'title', desc: 'The title for the screens without there own title');
+  }
+
+  String get message {
+    return Intl.message('Welcome to Flutter Images', name: 'message');
   }
 
   /// Generics
@@ -43,14 +51,5 @@ class CoreLocalizations {
 
   String get no {
     return Intl.message('No', name: 'no');
-  }
-
-  /// PW Input
-  String get inputTextShow {
-    return Intl.message('Show text', name: 'inputTextShow');
-  }
-
-  String get inputTextHide {
-    return Intl.message('Hide text', name: 'inputTextHide');
   }
 }
