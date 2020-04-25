@@ -23,10 +23,10 @@ class MessageLookup extends MessageLookupByLibrary {
   static _notInlinedMessages(_) => <String, Function> {
     "appTitle" : MessageLookupByLibrary.simpleMessage("Flutter Images"),
     "cancel" : MessageLookupByLibrary.simpleMessage("Cancel"),
-    "inputTextHide" : MessageLookupByLibrary.simpleMessage("Hide text"),
-    "inputTextShow" : MessageLookupByLibrary.simpleMessage("Show text"),
+    "message" : MessageLookupByLibrary.simpleMessage("Welcome to Flutter Images"),
     "no" : MessageLookupByLibrary.simpleMessage("No"),
     "ok" : MessageLookupByLibrary.simpleMessage("OK"),
+    "title" : MessageLookupByLibrary.simpleMessage("Flutter Images"),
     "yes" : MessageLookupByLibrary.simpleMessage("Yes")
   };
 }

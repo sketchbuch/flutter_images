@@ -1,8 +1,19 @@
 {
-  "@@last_modified": "2020-04-02T15:18:59.443557",
+  "@@last_modified": "2020-04-25T17:39:24.280872",
   "appTitle": "Flutter Images",
   "@appTitle": {
-    "description": "The app title",
+    "description": "The app title (used on app screen)",
+    "type": "text",
+    "placeholders": {}
+  },
+  "title": "Flutter Images",
+  "@title": {
+    "description": "The title for the screens without there own title",
+    "type": "text",
+    "placeholders": {}
+  },
+  "message": "Welcome to Flutter Images",
+  "@message": {
     "type": "text",
     "placeholders": {}
   },
@@ -23,16 +34,6 @@
   },
   "no": "No",
   "@no": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "inputTextShow": "Show text",
-  "@inputTextShow": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "inputTextHide": "Hide text",
-  "@inputTextHide": {
     "type": "text",
     "placeholders": {}
   }

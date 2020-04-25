@@ -1,3 +1,4 @@
+import 'package:flutter_images/l10n/login/localizations.dart';
 import 'package:flutter/material.dart';
 
 class SignInButton extends StatelessWidget {
@@ -7,6 +8,8 @@ class SignInButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    LoginLocalizations loginLocalizations = LoginLocalizations.of(context);
+
     return OutlineButton(
       splashColor: Colors.grey,
       onPressed: onPressed,
@@ -23,7 +26,7 @@ class SignInButton extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(left: 10),
               child: Text(
-                'Sign in with Google',
+                loginLocalizations.signinButton,
                 style: TextStyle(
                   fontSize: 20,
                   color: Colors.grey,
