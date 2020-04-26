@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 final FirebaseAuth firebaseAuth = FirebaseAuth.instance;
-final GoogleSignIn googleSignIn = GoogleSignIn();
+final GoogleSignIn googleSignIn = GoogleSignIn(scopes: ['https://www.googleapis.com/auth/photoslibrary.readonly']);
 
 Future<String> signInGoogle() async {
   String _name;
@@ -21,16 +21,6 @@ Future<String> signInGoogle() async {
     final AuthResult authResult = await firebaseAuth.signInWithCredential(credential);
     final FirebaseUser user = authResult.user;
 
-    print('### authResult');
-    print(authResult);
-    print('### user');
-    print(user);
-
-    // Checking if email and name is null
-    assert(user.email != null);
-    assert(user.displayName != null);
-    assert(user.photoUrl != null);
-
     _name = user.displayName;
     _email = user.email;
     _imageUrl = user.photoUrl;
@@ -40,21 +30,24 @@ Future<String> signInGoogle() async {
       _name = _name.substring(0, _name.indexOf(" "));
     }
 
-    assert(!user.isAnonymous);
-    assert(await user.getIdToken() != null);
-
     final FirebaseUser currentUser = await firebaseAuth.currentUser();
     assert(user.uid == currentUser.uid);
 
-    return '### signInGoogle succeeded: $_name - $_email - $_imageUrl';
+    print('### signInGoogle succeeded: $_name - $_email - $_imageUrl');
+
+    return _name;
   } catch (error) {
     throw Exception('signInGoogle(): $error');
   }
 }
 
 Future<void> signOutGoogle() async {
-  await googleSignIn.signOut();
-  await firebaseAuth.signOut();
+  try {
+    await googleSignIn.signOut();
+    await firebaseAuth.signOut();
+  } catch (error) {
+    throw Exception('signOutGoogle(): $error');
+  }
 }
 
 Future<bool> isLoggedIn() async {
@@ -63,5 +56,6 @@ Future<bool> isLoggedIn() async {
     return false;
   }
 
+  print('### signInGoogle alreadey logged in: ${user.displayName} - ${user.email} - ${user.photoUrl}');
   return true;
 }

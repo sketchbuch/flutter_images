@@ -1,5 +1,5 @@
 import 'package:flutter_images/constants/layout.dart';
-import 'package:flutter_images/firebase/sign_in.dart';
+import 'package:flutter_images/firebase/auth.dart';
 import 'package:flutter_images/l10n/core/localizations.dart';
 import 'package:flutter_images/screens/home_screen.dart';
 import 'package:flutter_images/screens/login_screen.dart';

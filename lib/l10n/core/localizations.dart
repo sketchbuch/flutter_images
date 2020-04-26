@@ -29,7 +29,6 @@ class CoreLocalizations {
   }
 
   String get cTitle {
-    print('### core title');
     return Intl.message('Flutter Images', name: 'cTitle', desc: 'The title for the screens without there own title');
   }
 

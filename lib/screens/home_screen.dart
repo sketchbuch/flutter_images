@@ -1,7 +1,8 @@
 import 'package:flutter_images/constants/layout.dart';
-import 'package:flutter_images/firebase/sign_in.dart';
+import 'package:flutter_images/firebase/auth.dart';
 import 'package:flutter_images/l10n/core/localizations.dart';
 import 'package:flutter_images/l10n/login/localizations.dart';
+import 'package:flutter_images/screens/error_screen.dart';
 import 'package:flutter_images/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -14,8 +15,13 @@ class HomeScreen extends StatefulWidget {
 
 class HomeScreenState extends State<HomeScreen> {
   void handleLogout() async {
-    await signOutGoogle();
-    Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => SplashScreen()));
+    try {
+      signOutGoogle().then((response) {
+        Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => SplashScreen()));
+      });
+    } catch (error) {
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => ErrorScreen(error)));
+    }
   }
 
   @override
