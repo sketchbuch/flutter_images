@@ -1,5 +1,6 @@
 import 'package:flutter_images/firebase/auth.dart';
 import 'package:flutter_images/l10n/login/localizations.dart';
+import 'package:flutter_images/models/user.dart';
 import 'package:flutter_images/screens/error_screen.dart';
 import 'package:flutter_images/screens/home_screen.dart';
 import 'package:flutter_images/widgets/ui/signin_button.dart';
@@ -17,7 +18,7 @@ class LoginScreenState extends State<LoginScreen> {
     // try/catch instead of .catchError() as a work around
     // to: https://github.com/flutter/flutter/issues/33427
     try {
-      signInGoogle().then((response) {
+      signInGoogle().then((User loggedinUser) {
         Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => HomeScreen()));
       });
     } catch (error) {

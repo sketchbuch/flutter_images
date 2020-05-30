@@ -5,6 +5,8 @@ import 'package:flutter_images/l10n/login/localizations.dart';
 import 'package:flutter_images/screens/error_screen.dart';
 import 'package:flutter_images/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_images/utils/get_photos.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key key}) : super(key: key);
@@ -14,10 +16,30 @@ class HomeScreen extends StatefulWidget {
 }
 
 class HomeScreenState extends State<HomeScreen> {
+  dynamic photo;
+
   void handleLogout() async {
     try {
       signOutGoogle().then((response) {
         Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => SplashScreen()));
+      });
+    } catch (error) {
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => ErrorScreen(error)));
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+
+    try {
+      final GoogleSignInAccount currentUser = googleSignIn.currentUser;
+      getPhotos(currentUser).then((response) {
+        print('### id: ' + response.id);
+        print('### baseUrl: ' + response.baseUrl);
+        print('### filename: ' + response.filename);
+        print('### mimeType: ' + response.mimeType);
+        print('### productUrl: ' + response.productUrl);
       });
     } catch (error) {
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => ErrorScreen(error)));
@@ -37,7 +59,7 @@ class HomeScreenState extends State<HomeScreen> {
           margin: insetNormal,
           child: Column(
             children: <Widget>[
-              Text(coreLocalizations.cMessage),
+              Text(loggedinUser.name),
               RaisedButton(
                 child: Text(LoginLocalizations.of(context).lSignoutButton),
                 onPressed: handleLogout,

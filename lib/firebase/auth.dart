@@ -1,14 +1,12 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_images/models/user.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 final FirebaseAuth firebaseAuth = FirebaseAuth.instance;
 final GoogleSignIn googleSignIn = GoogleSignIn(scopes: ['https://www.googleapis.com/auth/photoslibrary.readonly']);
+User loggedinUser;
 
-Future<String> signInGoogle() async {
-  String _name;
-  String _email;
-  String _imageUrl;
-
+Future<User> signInGoogle() async {
   try {
     final GoogleSignInAccount googleSignInAccount = await googleSignIn.signIn();
     final GoogleSignInAuthentication googleSignInAuthentication = await googleSignInAccount.authentication;
@@ -20,22 +18,12 @@ Future<String> signInGoogle() async {
 
     final AuthResult authResult = await firebaseAuth.signInWithCredential(credential);
     final FirebaseUser user = authResult.user;
-
-    _name = user.displayName;
-    _email = user.email;
-    _imageUrl = user.photoUrl;
-
-    // Only taking the first part of the name, i.e., First Name
-    if (_name.contains(" ")) {
-      _name = _name.substring(0, _name.indexOf(" "));
-    }
+    loggedinUser = User(user.displayName, user.email, user.photoUrl);
 
     final FirebaseUser currentUser = await firebaseAuth.currentUser();
     assert(user.uid == currentUser.uid);
 
-    print('### signInGoogle succeeded: $_name - $_email - $_imageUrl');
-
-    return _name;
+    return loggedinUser;
   } catch (error) {
     throw Exception('signInGoogle(): $error');
   }
@@ -52,10 +40,12 @@ Future<void> signOutGoogle() async {
 
 Future<bool> isLoggedIn() async {
   FirebaseUser user = await firebaseAuth.currentUser();
-  if (user == null) {
-    return false;
+  bool isSignedIn = await googleSignIn.isSignedIn();
+
+  if (isSignedIn && user != null) {
+    loggedinUser = User(user.displayName, user.email, user.photoUrl);
+    return true;
   }
 
-  print('### signInGoogle alreadey logged in: ${user.displayName} - ${user.email} - ${user.photoUrl}');
-  return true;
+  return false;
 }
