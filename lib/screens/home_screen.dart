@@ -55,13 +55,29 @@ class HomeScreenState extends State<HomeScreen> {
       ),
       body: SingleChildScrollView(
         child: Container(
-          margin: insetNormal,
           child: Column(
             children: <Widget>[
               Text(loggedinUser.name),
               if (photo != null)
-                Image.network(
-                  photo.baseUrl,
+                Column(
+                  children: <Widget>[
+                    Padding(
+                      padding: EdgeInsets.all(16.0),
+                      child: Image.network(
+                        photo.baseUrl,
+                      ),
+                    ),
+                    Text(photo.filename)
+                  ],
+                ),
+              if (photo == null)
+                Column(
+                  children: <Widget>[
+                    Padding(
+                      padding: EdgeInsets.all(16.0),
+                      child: CircularProgressIndicator(),
+                    ),
+                  ],
                 ),
               RaisedButton(
                 child: Text(LoginLocalizations.of(context).lSignoutButton),
@@ -69,6 +85,8 @@ class HomeScreenState extends State<HomeScreen> {
               )
             ],
           ),
+          margin: insetNormal,
+          width: MediaQuery.of(context).size.width,
         ),
       ),
     );

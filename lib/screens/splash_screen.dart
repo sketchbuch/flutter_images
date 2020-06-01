@@ -36,8 +36,8 @@ class SplashScreenState extends State<SplashScreen> {
       ),
       body: SingleChildScrollView(
         child: Container(
+          child: CircularProgressIndicator(),
           margin: insetNormal,
-          child: Text('...'),
         ),
       ),
     );
