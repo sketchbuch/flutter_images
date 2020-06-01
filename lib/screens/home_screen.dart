@@ -7,7 +7,6 @@ import 'package:flutter_images/screens/error_screen.dart';
 import 'package:flutter_images/screens/splash_screen.dart';
 import 'package:flutter_images/utils/get_photos.dart';
 import 'package:flutter/material.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key key}) : super(key: key);
@@ -34,12 +33,13 @@ class HomeScreenState extends State<HomeScreen> {
     super.initState();
 
     try {
-      final GoogleSignInAccount currentUser = googleSignIn.currentUser;
-      getPhotos(currentUser).then((response) {
-        setState(() {
-          photo = response;
+      if (googleSignIn.currentUser != null) {
+        getPhotos(googleSignIn.currentUser).then((response) {
+          setState(() {
+            photo = response;
+          });
         });
-      });
+      }
     } catch (error) {
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => ErrorScreen(error)));
     }

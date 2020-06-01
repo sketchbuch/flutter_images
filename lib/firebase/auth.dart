@@ -43,6 +43,7 @@ Future<bool> isLoggedIn() async {
   bool isSignedIn = await googleSignIn.isSignedIn();
 
   if (isSignedIn && user != null) {
+    await googleSignIn.signInSilently();
     loggedinUser = User(user.displayName, user.email, user.photoUrl);
     return true;
   }
