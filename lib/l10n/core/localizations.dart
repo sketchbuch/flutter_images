@@ -36,20 +36,24 @@ class CoreLocalizations {
     return Intl.message('Welcome to Flutter Images', name: 'cMessage');
   }
 
+  String get cNoImages {
+    return Intl.message('Sorry, but you do not have any images to display', name: 'cNoImages');
+  }
+
   /// Generics
   String get cCancel {
-    return Intl.message('cCancel', name: 'cancel');
+    return Intl.message('Cancel', name: 'cCancel');
   }
 
   String get cOk {
-    return Intl.message('cOk', name: 'ok');
+    return Intl.message('Ok', name: 'cOk');
   }
 
   String get cYes {
-    return Intl.message('cYes', name: 'yes');
+    return Intl.message('Yes', name: 'cYes');
   }
 
   String get cNo {
-    return Intl.message('cNo', name: 'no');
+    return Intl.message('No', name: 'cNo');
   }
 }

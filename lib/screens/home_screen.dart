@@ -17,6 +17,7 @@ class HomeScreen extends StatefulWidget {
 
 class HomeScreenState extends State<HomeScreen> {
   Media photo;
+  bool imagesLoaded = false;
 
   void handleLogout() async {
     try {
@@ -38,9 +39,11 @@ class HomeScreenState extends State<HomeScreen> {
           setState(() {
             photo = response;
           });
+          imagesLoaded = true;
         });
       }
     } catch (error) {
+      print('### catch()');
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => ErrorScreen(error)));
     }
   }
@@ -70,12 +73,21 @@ class HomeScreenState extends State<HomeScreen> {
                     Text(photo.filename)
                   ],
                 ),
-              if (photo == null)
+              if (photo == null && !imagesLoaded)
                 Column(
                   children: <Widget>[
                     Padding(
                       padding: EdgeInsets.all(16.0),
                       child: CircularProgressIndicator(),
+                    ),
+                  ],
+                ),
+              if (photo == null && imagesLoaded)
+                Column(
+                  children: <Widget>[
+                    Padding(
+                      padding: EdgeInsets.all(16.0),
+                      child: Text(coreLocalizations.cNoImages),
                     ),
                   ],
                 ),

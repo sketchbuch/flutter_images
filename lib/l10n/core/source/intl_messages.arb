@@ -1,5 +1,5 @@
 {
-  "@@last_modified": "2020-04-25T19:03:33.824843",
+  "@@last_modified": "2020-06-01T09:41:01.484675",
   "cAppTitle": "Flutter Images",
   "@cAppTitle": {
     "description": "The app title (used on app screen)",
@@ -14,6 +14,31 @@
   },
   "cMessage": "Welcome to Flutter Images",
   "@cMessage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "cNoImages": "Sorry, but you do not have any images to display",
+  "@cNoImages": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "cCancel": "Cancel",
+  "@cCancel": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "cOk": "Ok",
+  "@cOk": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "cYes": "Yes",
+  "@cYes": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "cNo": "No",
+  "@cNo": {
     "type": "text",
     "placeholders": {}
   }
