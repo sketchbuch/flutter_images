@@ -16,6 +16,8 @@ Future<Media> getPhotos(GoogleSignInAccount currentUser) async {
         if (mediaItems.length > 0) {
           Media media = Media.fromJson(mediaItems[0]);
           return media;
+        } else {
+          throw Exception('getPhotos(): No media files');
         }
       }
     }
